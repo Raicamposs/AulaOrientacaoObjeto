@@ -6,7 +6,7 @@
 package aulaorientacaoobjeto;
 
 import javax.swing.JOptionPane;
-import jdk.nashorn.internal.runtime.JSType;
+
 
 public class Exercicio {
 
