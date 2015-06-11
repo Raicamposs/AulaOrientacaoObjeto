@@ -15,20 +15,25 @@ import jdk.nashorn.internal.runtime.JSType;
 public class aplicacaoCpf {
 
     public String cpfParseString() {
-        String numCpf = null;
+        
+         String numCpf = null;
         Boolean confere = false;
         while (!confere == true) {
-
-            numCpf = JOptionPane.showInputDialog(null, "Qual Numero do Cpf?\nInsira apenas os digitos: ");
-            if (numCpf == null) {
-                System.exit(0);
-            } else {
-                numCpf = numCpf.trim();
-                if (JSType.isNumber(numCpf) && numCpf.length() == 11) {
-                    confere = true;
+            boolean digitouAlgumCPF = false;
+            while (!digitouAlgumCPF) {
+                numCpf = JOptionPane.showInputDialog(null, "Qual Numero do Cpf?\nInsira apenas os digitos: ");
+                if (numCpf == null) {
+                    digitouAlgumCPF = false;
+                    JOptionPane.showMessageDialog(null, "Digite um cpf para continuar!");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Numero de Cpf esta com formato incorreto!");
+                    digitouAlgumCPF = true;
+                    numCpf = numCpf.trim();
+                    if (JSType.isNumber(numCpf) && numCpf.length() == 11) {
+                        confere = true;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Numero de Cpf esta com formato incorreto!");
 
+                    }
                 }
             }
         }
