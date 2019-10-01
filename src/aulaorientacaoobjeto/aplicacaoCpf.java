@@ -35,6 +35,7 @@ public class aplicacaoCpf {
         return numCpf;
     }
 
+    //calcular o numero dv do seu cpf apartir dos outros numeros 
     public int dvCpf(int num, String numCpf) {
 
         int j = num;
